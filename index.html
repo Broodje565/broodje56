@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broodje56 - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Thema-schakelaar -->
+  <div class="toggle-container">
+    <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+  </div>
+
+  <header id="about-me" class="fade-in">
+  <div class="about-container">
+    <h1 class="about-title">Broodje56</h1>
+    <h2 class="about-subtitle">About Me</h2>
+    <div class="about-line"></div>
+    <p class="about-text">
+      I am a passionate developer and gamer with a strong interest in creating games, developing websites, and exploring new technologies.
+      Whether building fun arcade games, crafting dynamic websites, or tinkering with code, I am always looking to improve my skills.
+      In my free time, I enjoy listening to EDM, especially house and techno. I strive to combine my creativity with technical expertise to produce exciting projects.
+    </p>
+  </div>
+</header>
+
+
+  <!-- My Projects Sectie -->
+  <section id="projects" class="fade-in-once">
+    <h2>My Projects</h2>
+    <div class="project-card" id="breakout-card">
+      <h3>Breakout</h3>
+      <p>Play my classic brick-breaking game directly in your browser!</p>
+      <button onclick="toggleBreakout()">Play Breakout</button>
+      <div id="breakout-container" class="game-container hidden">
+        <canvas id="breakoutCanvas" width="480" height="320"></canvas>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>TicTacToe</h3>
+      <p>Coming soon...</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Flappy Bird (in progress)</h3>
+      <p>Stay tuned for updates!</p>
+    </div>
+  </section>
+  <!-- My Skills Sectie -->
+  <section id="skills" class="fade-in-once">
+    <h2>My Skills</h2>
+    <div class="skill">C++</div>
+    <div class="skill">C</div>
+    <div class="skill">Java</div>
+    <div class="skill">HTML</div>
+    <div class="skill">Python</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Unity</div>
+    <div class="skill">Responsive Design</div>
+  </section>
+
+  <!-- What I Offer Sectie -->
+  <section id="offer" class="fade-in">
+    <h2>What I Offer</h2>
+    <p>I create websites and technical solutions for clients with a focus on quality and performance. My services include:</p>
+    <div class="offer-container">
+      <div class="offer-card">
+        <h3>⚙️ Custom Website Development</h3>
+        <p>Tailor-made, responsive websites designed to meet your unique needs.</p>
+      </div>
+      <div class="offer-card">
+        <h3>🎮 Game Development</h3>
+        <p>Creating engaging arcade and mobile games using Unity and JavaScript.</p>
+      </div>
+      <div class="offer-card">
+        <h3>🔧 Technical Consulting</h3>
+        <p>Providing expert advice and solutions for complex technical challenges.</p>
+      </div>
+      <div class="offer-card">
+        <h3>🚀 Optimization</h3>
+        <p>Ensuring your website or application is fast, secure, and efficient.</p>
+      </div>
+      <div class="offer-card">
+        <h3>🛠️ Full-Stack Solutions</h3>
+        <p>From front-end design to back-end logic, delivering complete projects from start to finish.</p>
+      </div>
+      <div class="offer-card">
+        <h3>📈 Continuous Improvement</h3>
+        <p>Offering ongoing maintenance and updates to keep your digital products current.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Process Sectie -->
+<section id="contact" class="fade-in">
+  <h2>Get In Touch</h2>
+  <div class="contact-container">
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>
+        <a href="mailto:loic.vcamp@gmail.com" class="contact-link">loic.vcamp@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Discord</h3>
+      <p>
+        <a href="https://discord.com/users/broodje56" class="contact-link">broodje56</a>
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Let's Collaborate!</h3>
+      <p>If you want a website or technical solution, feel free to contact me!</p>
+    </div>
+  </div>
+</section>
+
+ <!-- JavaScript -->
+  <script>
+    // Thema wisselen
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleButton = document.getElementById('theme-toggle');
+      const isLightMode = localStorage.getItem('theme') === 'light';
+      document.body.classList.toggle('light-mode', isLightMode);
+      toggleButton.textContent = isLightMode ? '🌞' : '🌙';
+
+      toggleButton.addEventListener('click', () => {
+        const isLight = document.body.classList.toggle('light-mode');
+        toggleButton.textContent = isLight ? '🌞' : '🌙';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      });
+    });
+
+    // Uitklapbaar Breakout-venster
+    function toggleBreakout() {
+      const container = document.getElementById('breakout-container');
+      container.classList.toggle('hidden');
+      if (!container.classList.contains('hidden')) {
+        startBreakout();
+      }
+    }
+
+    // Breakout-game logica
+    function startBreakout() {
+      const canvas = document.getElementById('breakoutCanvas');
+      const ctx = canvas.getContext('2d');
+
+      // Variabelen
+      let ballX = canvas.width / 2;
+      let ballY = canvas.height - 50;
+      let dx = 3;
+      let dy = -3;
+      const ballRadius = 10;
+
+      const paddleWidth = 120;
+      const paddleHeight = 10;
+      let paddleX = (canvas.width - paddleWidth) / 2;
+
+      let rightPressed = false;
+      let leftPressed = false;
+
+      // Blok-instellingen (4 onderste rijen verwijderd)
+      const brickRowCount = 4;
+      const brickColumnCount = 14;
+      const brickWidth = 50;
+      const brickHeight = 20;
+      const brickPadding = 5;
+      const brickOffsetTop = 30;
+      const brickOffsetLeft = 20;
+
+      const bricks = [];
+      for (let c = 0; c < brickColumnCount; c++) {
+        bricks[c] = [];
+        for (let r = 0; r < brickRowCount; r++) {
+          bricks[c][r] = { x: 0, y: 0, status: 1 };
+        }
+      }
+
+      // Paddle-besturing
+      document.addEventListener('keydown', keyDownHandler);
+      document.addEventListener('keyup', keyUpHandler);
+
+      function keyDownHandler(e) {
+        if (e.key === 'Right' || e.key === 'ArrowRight') rightPressed = true;
+        else if (e.key === 'Left' || e.key === 'ArrowLeft') leftPressed = true;
+      }
+
+      function keyUpHandler(e) {
+        if (e.key === 'Right' || e.key === 'ArrowRight') rightPressed = false;
+        else if (e.key === 'Left' || e.key === 'ArrowLeft') leftPressed = false;
+      }
+
+      // Teken de bal
+      function drawBall() {
+        ctx.beginPath();
+        ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+        ctx.fillStyle = '#7d2ae8';
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      // Teken de paddle
+      function drawPaddle() {
+        ctx.beginPath();
+        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+        ctx.fillStyle = '#7d2ae8';
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      // Teken de blokjes
+      function drawBricks() {
+        for (let c = 0; c < brickColumnCount; c++) {
+          for (let r = 0; r < brickRowCount; r++) {
+            if (bricks[c][r].status === 1) {
+              const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+              const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+              bricks[c][r].x = brickX;
+              bricks[c][r].y = brickY;
+              ctx.beginPath();
+              ctx.rect(brickX, brickY, brickWidth, brickHeight);
+              ctx.fillStyle = '#7d2ae8';
+              ctx.fill();
+              ctx.closePath();
+            }
+          }
+        }
+      }
+
+      // Botsingsdetectie
+      function collisionDetection() {
+        for (let c = 0; c < brickColumnCount; c++) {
+          for (let r = 0; r < brickRowCount; r++) {
+            const b = bricks[c][r];
+            if (b.status === 1) {
+              if (ballX > b.x && ballX < b.x + brickWidth && ballY > b.y && ballY < b.y + brickHeight) {
+                dy = -dy;
+                b.status = 0;
+                dx *= 1.05; // Versnel bal
+                dy *= 1.05;
+              }
+            }
+          }
+        }
+      }
+
+      // Spel-loop
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBricks();
+        drawBall();
+        drawPaddle();
+        collisionDetection();
+
+        if (ballX + dx > canvas.width - ballRadius || ballX + dx < ballRadius) dx = -dx;
+
+        if (ballY + dy < ballRadius) dy = -dy;
+        else if (ballY + dy > canvas.height - ballRadius) {
+          if (ballX > paddleX && ballX < paddleX + paddleWidth) dy = -dy;
+          else document.location.reload();
+        }
+
+        if (rightPressed && paddleX < canvas.width - paddleWidth) paddleX += 7;
+        else if (leftPressed && paddleX > 0) paddleX -= 7;
+
+        ballX += dx;
+        ballY += dy;
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+    }
+  </script>
+
+</body>
+
+</html>
