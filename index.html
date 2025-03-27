@@ -2,288 +2,368 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Broodje56 - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broodje56 - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Thema-schakelaar -->
-  <div class="toggle-container">
-    <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
-  </div>
-
-  <header id="about-me" class="fade-in">
-  <div class="about-container">
-    <h1 class="about-title">Broodje56</h1>
-    <h2 class="about-subtitle">About Me</h2>
-    <div class="about-line"></div>
-    <p class="about-text">
-      I am a passionate developer and gamer with a strong interest in creating games, developing websites, and exploring new technologies.
-      Whether building fun arcade games, crafting dynamic websites, or tinkering with code, I am always looking to improve my skills.
-      In my free time, I enjoy listening to EDM, especially house and techno. I strive to combine my creativity with technical expertise to produce exciting projects.
-    </p>
-  </div>
-</header>
-
-
-  <!-- My Projects Sectie -->
-  <section id="projects" class="fade-in-once">
-    <h2>My Projects</h2>
-    <div class="project-card" id="breakout-card">
-      <h3>Breakout</h3>
-      <p>Play my classic brick-breaking game directly in your browser!</p>
-      <button onclick="toggleBreakout()">Play Breakout</button>
-      <div id="breakout-container" class="game-container hidden">
-        <canvas id="breakoutCanvas" width="480" height="320"></canvas>
-      </div>
+    <div class="toggle-container">
+        <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
     </div>
 
-    <div class="project-card">
-      <h3>TicTacToe</h3>
-      <p>Coming soon...</p>
-    </div>
+    <header id="about-me" class="fade-in">
+        <div class="about-container">
+            <h1 class="about-title">Broodje56</h1>
+            <h2 class="about-subtitle">About Me</h2>
+            <div class="about-line"></div>
+            <p class="about-text">
+                I am a passionate developer and gamer with a strong interest in creating games, developing websites, and exploring new technologies.
+                Whether building fun arcade games, crafting dynamic websites, or tinkering with code, I am always looking to improve my skills.
+                In my free time, I enjoy listening to EDM, especially house and techno. I strive to combine my creativity with technical expertise to produce exciting projects.
+            </p>
+        </div>
+    </header>
 
-    <div class="project-card">
-      <h3>Flappy Bird (in progress)</h3>
-      <p>Stay tuned for updates!</p>
-    </div>
-  </section>
-  <!-- My Skills Sectie -->
-  <section id="skills" class="fade-in-once">
-    <h2>My Skills</h2>
-    <div class="skill">C++</div>
-    <div class="skill">C</div>
-    <div class="skill">Java</div>
-    <div class="skill">HTML</div>
-    <div class="skill">Python</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">Unity</div>
-    <div class="skill">Responsive Design</div>
-  </section>
 
-  <!-- What I Offer Sectie -->
-  <section id="offer" class="fade-in">
-    <h2>What I Offer</h2>
-    <p>I create websites and technical solutions for clients with a focus on quality and performance. My services include:</p>
-    <div class="offer-container">
-      <div class="offer-card">
-        <h3>⚙️ Custom Website Development</h3>
-        <p>Tailor-made, responsive websites designed to meet your unique needs.</p>
-      </div>
-      <div class="offer-card">
-        <h3>🎮 Game Development</h3>
-        <p>Creating engaging arcade and mobile games using Unity and JavaScript.</p>
-      </div>
-      <div class="offer-card">
-        <h3>🔧 Technical Consulting</h3>
-        <p>Providing expert advice and solutions for complex technical challenges.</p>
-      </div>
-      <div class="offer-card">
-        <h3>🚀 Optimization</h3>
-        <p>Ensuring your website or application is fast, secure, and efficient.</p>
-      </div>
-      <div class="offer-card">
-        <h3>🛠️ Full-Stack Solutions</h3>
-        <p>From front-end design to back-end logic, delivering complete projects from start to finish.</p>
-      </div>
-      <div class="offer-card">
-        <h3>📈 Continuous Improvement</h3>
-        <p>Offering ongoing maintenance and updates to keep your digital products current.</p>
-      </div>
-    </div>
-  </section>
+    <section id="projects" class="fade-in-once">
+        <h2>My Projects</h2>
+        <div class="project-card" id="breakout-card">
+            <h3>Breakout</h3>
+            <p>Play my classic brick-breaking game directly in your browser!</p>
+            <button onclick="toggleBreakout()">Play Breakout</button>
+            <div id="breakout-container" class="game-container hidden">
+                <canvas id="breakoutCanvas" width="480" height="320"></canvas>
+                <div id="score">Score: 0</div>
+                <div id="gameOver" class="hidden">Game Over!</div>
+                <button onclick="restartBreakout()" class="hidden" id="restartButton">Restart</button>
+                <button onclick="togglePause()" id="pauseButton">Pause</button>
+            </div>
+        </div>
 
-  <!-- My Process Sectie -->
-<section id="contact" class="fade-in">
-  <h2>Get In Touch</h2>
-  <div class="contact-container">
-    <div class="contact-card">
-      <h3>Email</h3>
-      <p>
-        <a href="mailto:loic.vcamp@gmail.com" class="contact-link">loic.vcamp@gmail.com</a>
-      </p>
-    </div>
+        <div class="project-card">
+            <h3>TicTacToe</h3>
+            <p>Coming soon...</p>
+        </div>
 
-    <div class="contact-card">
-      <h3>Discord</h3>
-      <p>
-        <a href="https://discord.com/users/broodje56" class="contact-link">broodje56</a>
-      </p>
-    </div>
+        <div class="project-card">
+            <h3>Flappy Bird (in progress)</h3>
+            <p>Stay tuned for updates!</p>
+        </div>
+    </section>
+    <section id="skills" class="fade-in-once">
+        <h2>My Skills</h2>
+        <div class="skill">C++</div>
+        <div class="skill">C</div>
+        <div class="skill">Java</div>
+        <div class="skill">HTML</div>
+        <div class="skill">Python</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Unity</div>
+        <div class="skill">Responsive Design</div>
+    </section>
 
-    <div class="contact-card">
-      <h3>Linktree</h3>
-      <p>
-        <a href="https://linktr.ee/broodje56" class="contact-link">Linktree</a>
-      </p>
-    </div>
-	
-    <div class="contact-card">
-      <h3>Let's Collaborate!</h3>
-      <p>If you want a website or technical solution, feel free to contact me!</p>
-    </div>
-  </div>
-</section>
+    <section id="offer" class="fade-in">
+        <h2>What I Offer</h2>
+        <p>I create websites and technical solutions for clients with a focus on quality and performance. My services include:</p>
+        <div class="offer-container">
+            <div class="offer-card">
+                <h3>⚙️ Custom Website Development</h3>
+                <p>Tailor-made, responsive websites designed to meet your unique needs.</p>
+            </div>
+            <div class="offer-card">
+                <h3>🎮 Game Development</h3>
+                <p>Creating engaging arcade and mobile games using Unity and JavaScript.</p>
+            </div>
+            <div class="offer-card">
+                <h3>🔧 Technical Consulting</h3>
+                <p>Providing expert advice and solutions for complex technical challenges.</p>
+            </div>
+            <div class="offer-card">
+                <h3>🚀 Optimization</h3>
+                <p>Ensuring your website or application is fast, secure, and efficient.</p>
+            </div>
+            <div class="offer-card">
+                <h3>🛠️ Full-Stack Solutions</h3>
+                <p>From front-end design to back-end logic, delivering complete projects from start to finish.</p>
+            </div>
+            <div class="offer-card">
+                <h3>📈 Continuous Improvement</h3>
+                <p>Offering ongoing maintenance and updates to keep your digital products current.</p>
+            </div>
+        </div>
+    </section>
 
- <!-- JavaScript -->
-  <script>
-    // Thema wisselen
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggleButton = document.getElementById('theme-toggle');
-      const isLightMode = localStorage.getItem('theme') === 'light';
-      document.body.classList.toggle('light-mode', isLightMode);
-      toggleButton.textContent = isLightMode ? '🌞' : '🌙';
+    <section id="contact" class="fade-in">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-card">
+                <h3>Email</h3>
+                <p>
+                    <a href="mailto:loic.vcamp@gmail.com" class="contact-link">loic.vcamp@gmail.com</a>
+                </p>
+            </div>
 
-      toggleButton.addEventListener('click', () => {
-        const isLight = document.body.classList.toggle('light-mode');
-        toggleButton.textContent = isLight ? '🌞' : '🌙';
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      });
-    });
+            <div class="contact-card">
+                <h3>Discord</h3>
+                <p>
+                    <a href="https://discord.com/users/broodje56" class="contact-link">broodje56</a>
+                </p>
+            </div>
 
-    // Uitklapbaar Breakout-venster
-    function toggleBreakout() {
-      const container = document.getElementById('breakout-container');
-      container.classList.toggle('hidden');
-      if (!container.classList.contains('hidden')) {
-        startBreakout();
-      }
-    }
+            <div class="contact-card">
+                <h3>Linktree</h3>
+                <p>
+                    <a href="https://linktr.ee/broodje56" class="contact-link">Linktree</a>
+                </p>
+            </div>
 
-    // Breakout-game logica
-    function startBreakout() {
-      const canvas = document.getElementById('breakoutCanvas');
-      const ctx = canvas.getContext('2d');
+            <div class="contact-card">
+                <h3>Let's Collaborate!</h3>
+                <p>If you want a website or technical solution, feel free to contact me!</p>
+            </div>
+        </div>
+    </section>
 
-      // Variabelen
-      let ballX = canvas.width / 2;
-      let ballY = canvas.height - 50;
-      let dx = 3;
-      let dy = -3;
-      const ballRadius = 10;
+    <script>
+        // Thema wisselen
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('theme-toggle');
+            const isLightMode = localStorage.getItem('theme') === 'light';
+            document.body.classList.toggle('light-mode', isLightMode);
+            toggleButton.textContent = isLightMode ? '🌞' : '🌙';
 
-      const paddleWidth = 120;
-      const paddleHeight = 10;
-      let paddleX = (canvas.width - paddleWidth) / 2;
+            toggleButton.addEventListener('click', () => {
+                const isLight = document.body.classList.toggle('light-mode');
+                toggleButton.textContent = isLight ? '🌞' : '🌙';
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            });
+        });
 
-      let rightPressed = false;
-      let leftPressed = false;
+let breakoutRunning = false;
 
-      // Blok-instellingen (4 onderste rijen verwijderd)
-      const brickRowCount = 4;
-      const brickColumnCount = 14;
-      const brickWidth = 50;
-      const brickHeight = 20;
-      const brickPadding = 5;
-      const brickOffsetTop = 30;
-      const brickOffsetLeft = 20;
+        function toggleBreakout() {
+            const container = document.getElementById('breakout-container');
+            container.classList.toggle('hidden');
+            const restartButton = document.getElementById('restartButton');
+            const gameOverText = document.getElementById('gameOver');
+            const pauseButton = document.getElementById('pauseButton');
 
-      const bricks = [];
-      for (let c = 0; c < brickColumnCount; c++) {
-        bricks[c] = [];
-        for (let r = 0; r < brickRowCount; r++) {
-          bricks[c][r] = { x: 0, y: 0, status: 1 };
-        }
-      }
-
-      // Paddle-besturing
-      document.addEventListener('keydown', keyDownHandler);
-      document.addEventListener('keyup', keyUpHandler);
-
-      function keyDownHandler(e) {
-        if (e.key === 'Right' || e.key === 'ArrowRight') rightPressed = true;
-        else if (e.key === 'Left' || e.key === 'ArrowLeft') leftPressed = true;
-      }
-
-      function keyUpHandler(e) {
-        if (e.key === 'Right' || e.key === 'ArrowRight') rightPressed = false;
-        else if (e.key === 'Left' || e.key === 'ArrowLeft') leftPressed = false;
-      }
-
-      // Teken de bal
-      function drawBall() {
-        ctx.beginPath();
-        ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = '#7d2ae8';
-        ctx.fill();
-        ctx.closePath();
-      }
-
-      // Teken de paddle
-      function drawPaddle() {
-        ctx.beginPath();
-        ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-        ctx.fillStyle = '#7d2ae8';
-        ctx.fill();
-        ctx.closePath();
-      }
-
-      // Teken de blokjes
-      function drawBricks() {
-        for (let c = 0; c < brickColumnCount; c++) {
-          for (let r = 0; r < brickRowCount; r++) {
-            if (bricks[c][r].status === 1) {
-              const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
-              const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-              bricks[c][r].x = brickX;
-              bricks[c][r].y = brickY;
-              ctx.beginPath();
-              ctx.rect(brickX, brickY, brickWidth, brickHeight);
-              ctx.fillStyle = '#7d2ae8';
-              ctx.fill();
-              ctx.closePath();
+            if (!container.classList.contains('hidden') && !breakoutRunning) {
+                startBreakout();
+                breakoutRunning = true;
+                restartButton.classList.add('hidden');
+                gameOverText.classList.add('hidden');
+                pauseButton.textContent = 'Pause';
+            } else if (container.classList.contains('hidden')) {
+                breakoutRunning = false;
+                paused = false; // Reset pause state when closing
+                pauseButton.textContent = 'Pause';
             }
-          }
         }
-      }
 
-      // Botsingsdetectie
-      function collisionDetection() {
-        for (let c = 0; c < brickColumnCount; c++) {
-          for (let r = 0; r < brickRowCount; r++) {
-            const b = bricks[c][r];
-            if (b.status === 1) {
-              if (ballX > b.x && ballX < b.x + brickWidth && ballY > b.y && ballY < b.y + brickHeight) {
-                dy = -dy;
-                b.status = 0;
-                dx *= 1.05; // Versnel bal
-                dy *= 1.05;
-              }
+function restartBreakout() {
+            const gameOverText = document.getElementById('gameOver');
+            const restartButton = document.getElementById('restartButton');
+            const pauseButton = document.getElementById('pauseButton');
+            const canvas = document.getElementById('breakoutCanvas');
+            const ctx = canvas.getContext('2d');
+            score = 0;
+            document.getElementById('score').textContent = 'Score: ' + score;
+            bricks = createBricks(); // Reset de bricks
+            ballX = canvas.width / 2;
+            ballY = canvas.height - 50;
+            dx = 5; // Keep the faster horizontal speed
+            dy = -5; // Keep the faster vertical speed
+            paddleX = (canvas.width - paddleWidth) / 2;
+            rightPressed = false;
+            leftPressed = false;
+            gameOver = false;
+            paused = false; // Reset pause state
+            gameOverText.classList.add('hidden');
+            restartButton.classList.add('hidden');
+            pauseButton.textContent = 'Pause';
+            draw(); // Start de game opnieuw
+        }
+		
+        // Breakout-game logica
+        let canvas;
+        let ctx;
+        let ballX;
+        let ballY;
+        let dx;
+        let dy;
+        const ballRadius = 10;
+        const paddleWidth = 120;
+        const paddleHeight = 10;
+        let paddleX;
+        let rightPressed;
+        let leftPressed;
+        const brickRowCount = 4;
+        const brickColumnCount = 14;
+        const brickWidth = 50;
+        const brickHeight = 20;
+        const brickPadding = 5;
+        const brickOffsetTop = 30;
+        const brickOffsetLeft = 20;
+        let bricks = [];
+        let score = 0;
+        let gameOver = false;
+        let paused = false; // Nieuwe variabele voor de pauzestand
+
+        function createBricks() {
+            const bricksArray = [];
+            for (let c = 0; c < brickColumnCount; c++) {
+                bricksArray[c] = [];
+                for (let r = 0; r < brickRowCount; r++) {
+                    bricksArray[c][r] = { x: 0, y: 0, status: 1 };
+                }
             }
-          }
-        }
-      }
-
-      // Spel-loop
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawBricks();
-        drawBall();
-        drawPaddle();
-        collisionDetection();
-
-        if (ballX + dx > canvas.width - ballRadius || ballX + dx < ballRadius) dx = -dx;
-
-        if (ballY + dy < ballRadius) dy = -dy;
-        else if (ballY + dy > canvas.height - ballRadius) {
-          if (ballX > paddleX && ballX < paddleX + paddleWidth) dy = -dy;
-          else document.location.reload();
+            return bricksArray;
         }
 
-        if (rightPressed && paddleX < canvas.width - paddleWidth) paddleX += 7;
-        else if (leftPressed && paddleX > 0) paddleX -= 7;
+function startBreakout() {
+            canvas = document.getElementById('breakoutCanvas');
+            ctx = canvas.getContext('2d');
+            score = 0;
+            document.getElementById('score').textContent = 'Score: ' + score;
+            bricks = createBricks();
+            ballX = canvas.width / 2;
+            ballY = canvas.height - 50;
+            dx = 5; // Verhoog de horizontale startsnelheid
+            dy = -5; // Verhoog de verticale startsnelheid (negatief om naar boven te gaan)
+            paddleX = (canvas.width - paddleWidth) / 2;
+            rightPressed = false;
+            leftPressed = false;
+            gameOver = false;
+            paused = false;
 
-        ballX += dx;
-        ballY += dy;
+            document.addEventListener('keydown', keyDownHandler);
+            document.addEventListener('keyup', keyUpHandler);
 
-        requestAnimationFrame(draw);
-      }
+            draw();
+        }
 
-      draw();
-    }
-  </script>
+        function keyDownHandler(e) {
+            if (e.key === 'Right' || e.key === 'ArrowRight') rightPressed = true;
+            else if (e.key === 'Left' || e.key === 'ArrowLeft') leftPressed = true;
+            else if (e.key === 'p' || e.key === 'P' || e.key === ' ') { // Pauzeer met 'P' of spatie
+                togglePause();
+            }
+        }
+
+        function keyUpHandler(e) {
+            if (e.key === 'Right' || e.key === 'ArrowRight') rightPressed = false;
+            else if (e.key === 'Left' || e.key === 'ArrowLeft') leftPressed = false;
+        }
+
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+            ctx.fillStyle = '#7d2ae8';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawPaddle() {
+            ctx.beginPath();
+            ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+            ctx.fillStyle = '#7d2ae8';
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        function drawBricks() {
+            for (let c = 0; c < brickColumnCount; c++) {
+                for (let r = 0; r < brickRowCount; r++) {
+                    if (bricks[c][r].status === 1) {
+                        const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+                        const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+                        bricks[c][r].x = brickX;
+                        bricks[c][r].y = brickY;
+                        ctx.beginPath();
+                        ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                        ctx.fillStyle = '#7d2ae8';
+                        ctx.fill();
+                        ctx.closePath();
+                    }
+                }
+            }
+        }
+
+        function collisionDetection() {
+            for (let c = 0; c < brickColumnCount; c++) {
+                for (let r = 0; r < brickRowCount; r++) {
+                    const b = bricks[c][r];
+                    if (b.status === 1) {
+                        if (ballX > b.x && ballX < b.x + brickWidth && ballY > b.y && ballY < b.y + brickHeight) {
+                            dy = -dy;
+                            b.status = 0;
+                            score++;
+                            document.getElementById('score').textContent = 'Score: ' + score;
+                            dx *= 1.05; // Alleen sneller als een blokje geraakt wordt
+                            dy *= 1.05;
+                            if (score === brickRowCount * brickColumnCount) {
+                                gameOver = true;
+                                paused = true; // Stop de game loop
+                                breakoutRunning = false; // Reset breakoutRunning bij winst
+                                document.getElementById('gameOver').textContent = 'You Win!';
+                                document.getElementById('gameOver').classList.remove('hidden');
+                                document.getElementById('restartButton').classList.remove('hidden');
+                                document.getElementById('pauseButton').classList.add('hidden'); // Verberg de pauzeknop na winnen
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        function draw() {
+            if (!gameOver && !paused) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawBricks();
+                drawBall();
+                drawPaddle();
+                collisionDetection();
+
+                if (ballX + dx > canvas.width - ballRadius || ballX + dx < ballRadius) dx = -dx;
+
+                if (ballY + dy < ballRadius) dy = -dy;
+                else if (ballY + dy > canvas.height - ballRadius) {
+                    if (ballX > paddleX && ballX < paddleX + paddleWidth) dy = -dy;
+                    else {
+                        gameOver = true;
+                        paused = true; // Stop de game loop
+                        breakoutRunning = false; // Reset breakoutRunning bij verlies
+                        document.getElementById('gameOver').textContent = 'Game Over!';
+                        document.getElementById('gameOver').classList.remove('hidden');
+                        document.getElementById('restartButton').classList.remove('hidden');
+                        document.getElementById('pauseButton').classList.add('hidden'); // Verberg de pauzeknop na verlies
+                    }
+                }
+
+                if (rightPressed && paddleX < canvas.width - paddleWidth) paddleX += 7;
+                else if (leftPressed && paddleX > 0) paddleX -= 7;
+
+                ballX += dx;
+                ballY += dy;
+
+                requestAnimationFrame(draw);
+            }
+        }
+
+        function togglePause() {
+            if (!gameOver) {
+                paused = !paused;
+                const pauseButton = document.getElementById('pauseButton');
+                pauseButton.textContent = paused ? 'Resume' : 'Pause';
+                if (!paused) {
+                    draw(); // Herstart de game loop als niet gepauzeerd
+                }
+            }
+        }
+    </script>
 
 </body>
 
