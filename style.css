@@ -1,314 +1,384 @@
 /* Algemene stijlen */
 :root {
-  --main-color: #7d2ae8;
-  --accent-color: #9f50ff;
-  --background-dark: #121212;
-  --background-light: #f9f9f9;
-  --text-dark: #121212;
-  --text-light: white;
+    --main-color: #7d2ae8;
+    --accent-color: #9f50ff;
+    --background-dark: #121212;
+    --background-light: #f9f9f9;
+    --text-dark: #121212;
+    --text-light: white;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  background-color: var(--background-dark);
-  color: var(--text-light);
-  transition: background-color 0.5s, color 0.5s;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
 }
 
 .light-mode {
-  background-color: var(--background-light);
-  color: var(--text-dark);
+    background-color: var(--background-light);
+    color: var(--text-dark);
 }
 
 /* Thema-schakelaar */
 .toggle-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
 }
 
 #theme-toggle {
-  background: none;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    background: none;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 #theme-toggle:hover {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 /* Header */
 header {
-  text-align: center;
-  padding: 5rem 1rem;
+    text-align: center;
+    padding: 5rem 1rem;
 }
 
 h1 {
-  font-size: 4rem;
-  margin: 0;
+    font-size: 4rem;
+    margin: 0;
 }
 
 h2 {
-  font-size: 3rem;
-  margin-top: 2rem;
+    font-size: 3rem;
+    margin-top: 2rem;
 }
 
 /* About Me Sectie */
 #about-me {
-  text-align: center;
-  padding: 5rem 1rem;
+    text-align: center;
+    padding: 5rem 1rem;
 }
 
 .about-container {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .about-title {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(90deg, var(--main-color), var(--accent-color));
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: slideIn 1.5s ease-out;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: slideIn 1.5s ease-out;
 }
 
 .about-subtitle {
-  font-size: 3rem;
-  margin-top: 0;
-  animation: fadeIn 1.5s ease-in forwards;
+    font-size: 3rem;
+    margin-top: 0;
+    animation: fadeIn 1.5s ease-in forwards;
 }
 
 .about-line {
-  width: 80%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--main-color), var(--accent-color));
-  margin: 2rem auto;
-  animation: expandLine 1.5s ease-out;
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--main-color), var(--accent-color));
+    margin: 2rem auto;
+    animation: expandLine 1.5s ease-out;
 }
 
 .about-text {
-  font-size: 1.4rem;
-  line-height: 2;
-  opacity: 0;
-  animation: fadeInText 2s ease-in forwards;
+    font-size: 1.4rem;
+    line-height: 2;
+    opacity: 0;
+    animation: fadeInText 2s ease-in forwards;
 }
 
 /* Secties */
 section {
-  padding: 3rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Projectkaarten */
 .project-card {
-  background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
-  color: white;
-  padding: 2rem;
-  border-radius: 20px;
-  margin: 1rem 0;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
+    color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 1rem 0;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .light-mode .project-card {
-  background: linear-gradient(145deg, #e0e0e0, #c9c9c9);
-  color: black;
+    background: linear-gradient(145deg, #e0e0e0, #c9c9c9);
+    color: black;
 }
 
 /* Skills */
 .skill {
-  display: inline-block;
-  background: var(--main-color);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  margin: 0.5rem;
-  font-weight: bold;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    background: var(--main-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    margin: 0.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill:hover {
-  transform: scale(1.2) rotate(10deg);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .light-mode .skill:hover {
-  background: var(--accent-color);
+    background: var(--accent-color);
 }
 
 /* Process-stappen */
 .process-step {
-  background: #1c1c1c;
-  padding: 2rem;
-  border-radius: 20px;
-  margin: 1rem 0;
+    background: #1c1c1c;
+    padding: 2rem;
+    border-radius: 20px;
+    margin: 1rem 0;
 }
 
 .light-mode .process-step {
-  background: #dcdcdc;
-  color: black;
+    background: #dcdcdc;
+    color: black;
 }
 
 /* What I Offer */
 .offer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .offer-card {
-  background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
-  color: white;
-  padding: 2rem;
-  border-radius: 20px;
-  width: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
+    color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .light-mode .offer-card {
-  background: linear-gradient(145deg, #e0e0e0, #c9c9c9);
-  color: black;
+    background: linear-gradient(145deg, #e0e0e0, #c9c9c9);
+    color: black;
 }
 
 .offer-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
 
 /* Get In Touch Sectie */
 #contact {
-  text-align: center;
-  padding: 4rem 1rem;
+    text-align: center;
+    padding: 4rem 1rem;
 }
 
 .contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .contact-card {
-  background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
-  color: white;
-  padding: 2rem;
-  border-radius: 20px;
-  width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
+    color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .light-mode .contact-card {
-  background: linear-gradient(145deg, #e0e0e0, #c9c9c9);
-  color: black;
+    background: linear-gradient(145deg, #e0e0e0, #c9c9c9);
+    color: black;
 }
 
 .contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
 
 .contact-link {
-  color: var(--main-color);
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .contact-link:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 /* Animaties */
 .fade-in {
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in forwards;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
 }
 
 .fade-in-once {
-  opacity: 0;
-  animation: fadeInOnce 1.5s ease-in forwards;
+    opacity: 0;
+    animation: fadeInOnce 1.5s ease-in forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInOnce {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Animaties voor About Me */
 @keyframes slideIn {
-  from {
-    transform: translateX(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes expandLine {
-  from {
-    width: 0;
-  }
-  to {
-    width: 80%;
-  }
+    from {
+        width: 0;
+    }
+    to {
+        width: 80%;
+    }
 }
 
 @keyframes fadeInText {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Verborgen elementen */
 .hidden {
-  display: none;
+    display: none;
 }
 
 /* Toegankelijkheid */
 button:focus {
-  outline: 2px solid var(--main-color);
-  outline-offset: 4px;
+    outline: 2px solid var(--main-color);
+    outline-offset: 4px;
+}
+
+/* Stijlen voor de Breakout container */
+#breakout-container {
+    position: relative; /* Belangrijk voor het positioneren van de knoppen */
+    margin-top: 1rem;
+}
+
+/* Algemene stijlen voor de knoppen in de Breakout container */
+#breakout-container button,
+#projects #breakout-card button { /* Ook de Play Breakout knop */
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0.5rem;
+}
+
+#breakout-container button:hover,
+#projects #breakout-card button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+#breakout-container button:focus,
+#projects #breakout-card button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Specifieke positie voor de "Restart" knop */
+#restartButton {
+    position: absolute;
+    bottom: 10px; /* Een beetje ruimte onder de canvas */
+    left: 50%;
+    transform: translateX(-50%); /* Centreer de knop */
+}
+
+/* Specifieke positie voor de "Pause" knop */
+#pauseButton {
+    position: absolute;
+    top: 10px; /* Een beetje ruimte boven de canvas */
+    left: 10px; /* Links boven */
+}
+
+/* Stijlen voor de "Game Over" tekst */
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.light-mode #gameOver {
+    color: var(--text-dark);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Extra marge voor de Play Breakout knop */
+#projects #breakout-card button {
+    margin-top: 1rem;
 }
