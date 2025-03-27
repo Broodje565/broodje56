@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -164,28 +165,29 @@ let breakoutRunning = false;
         }
 
 function restartBreakout() {
-            const gameOverText = document.getElementById('gameOver');
-            const restartButton = document.getElementById('restartButton');
-            const pauseButton = document.getElementById('pauseButton');
-            const canvas = document.getElementById('breakoutCanvas');
-            const ctx = canvas.getContext('2d');
-            score = 0;
-            document.getElementById('score').textContent = 'Score: ' + score;
-            bricks = createBricks(); // Reset de bricks
-            ballX = canvas.width / 2;
-            ballY = canvas.height - 50;
-            dx = 5; // Keep the faster horizontal speed
-            dy = -5; // Keep the faster vertical speed
-            paddleX = (canvas.width - paddleWidth) / 2;
-            rightPressed = false;
-            leftPressed = false;
-            gameOver = false;
-            paused = false; // Reset pause state
-            gameOverText.classList.add('hidden');
-            restartButton.classList.add('hidden');
-            pauseButton.textContent = 'Pause';
-            draw(); // Start de game opnieuw
-        }
+    const gameOverText = document.getElementById('gameOver');
+    const restartButton = document.getElementById('restartButton');
+    const pauseButton = document.getElementById('pauseButton'); // Haal de pauzeknop op
+    const canvas = document.getElementById('breakoutCanvas');
+    const ctx = canvas.getContext('2d');
+    score = 0;
+    document.getElementById('score').textContent = 'Score: ' + score;
+    bricks = createBricks(); // Reset de bricks
+    ballX = canvas.width / 2;
+    ballY = canvas.height - 50;
+    dx = 5; // Keep the faster horizontal speed
+    dy = -5; // Keep the faster vertical speed
+    paddleX = (canvas.width - paddleWidth) / 2;
+    rightPressed = false;
+    leftPressed = false;
+    gameOver = false;
+    paused = false; // Reset pause state
+    gameOverText.classList.add('hidden');
+    restartButton.classList.add('hidden');
+    pauseButton.classList.remove('hidden'); // Zorg ervoor dat de pauzeknop weer zichtbaar is
+    pauseButton.textContent = 'Pause'; // Reset de tekst van de pauzeknop
+    draw(); // Start de game opnieuw
+}
 		
         // Breakout-game logica
         let canvas;
