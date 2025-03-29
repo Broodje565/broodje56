@@ -59,6 +59,11 @@ body {
   z-index: 1000;
 }
 
+.light-mode .nav-bar {
+  background-color: white;
+  color: var(--text-dark);
+}
+
 .nav-bar ul {
   list-style: none;
   padding: 0;
@@ -93,6 +98,60 @@ body {
   text-shadow: 0 0 8px var(--accent-color);
 }
 
+/* FAQ Section */
+.faq-section {
+  margin: 4rem 0;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--main-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1rem;
+  background: var(--background-dark);
+  color: var(--text-light);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.light-mode .faq-question {
+  background: var(--background-light);
+  color: var(--text-dark);
+}
+
+.faq-question:hover {
+  background: var(--main-color);
+  color: var(--background-dark);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.5s ease;
+  background: var(--background-dark);
+  color: var(--text-light);
+}
+
+.light-mode .faq-answer {
+  background: var(--background-light);
+  color: var(--text-dark);
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 1rem;
+}
 
 .light-mode .nav-bar a {
   color: var(--text-dark);
@@ -438,4 +497,4 @@ button:focus {
 /* Extra marge voor de Play Breakout knop */
 #projects #breakout-card button {
   margin-top: 1rem;
-}
+} 
