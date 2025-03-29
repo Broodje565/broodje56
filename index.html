@@ -92,15 +92,18 @@
     </style>
 </head>
 <body>
+
     <nav class="nav-bar">
-        <ul>
-            <li><a href="#about-me">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#offer">What I Offer</a></li>
-            <li><a href="#contact">Get In Touch</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#offer">What I Offer</a></li>
+        <li><a href="#faq">FAQ</a></li>
+		<li><a href="#contact">Get In Touch</a></li>
+        
+    </ul>
+</nav>
 
     <div class="toggle-container">
         <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
@@ -187,6 +190,67 @@
             </div>
         </div>
     </section>
+<section id="faq" class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <div class="faq-question">What services do you offer?</div>
+      <div class="faq-answer"><p>I provide custom website development, game development, technical consulting, and full-stack solutions.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How can I contact you?</div>
+      <div class="faq-answer"><p>You can reach me via email or Discord, as listed in the 'Get In Touch' section.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do you offer continuous support?</div>
+      <div class="faq-answer"><p>Yes, I provide ongoing maintenance and improvements to keep your project up-to-date.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What technologies do you specialize in?</div>
+      <div class="faq-answer"><p>I specialize in modern web technologies, including HTML, CSS, JavaScript, and various frameworks for front-end and back-end development.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can you customize existing projects?</div>
+      <div class="faq-answer"><p>Absolutely! I can modify and optimize your existing projects to improve performance and functionality.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How long does a typical project take?</div>
+      <div class="faq-answer"><p>Project timelines vary depending on the complexity, but I always aim to deliver quality work within the agreed timeframe.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const answer = item.querySelector('.faq-answer');
+      const question = item.querySelector('.faq-question');
+
+      answer.style.maxHeight = '0';
+      answer.style.overflow = 'hidden';
+      answer.style.transition = 'max-height 0.5s ease';
+
+      question.addEventListener('click', () => {
+        if (item.classList.contains('open')) {
+          answer.style.maxHeight = '0';
+          item.classList.remove('open');
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          item.classList.add('open');
+        }
+      });
+    });
+  });
+</script>
 
     <section id="contact" class="fade-in">
         <h2>Get In Touch</h2>
