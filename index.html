@@ -1,15 +1,107 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Broodje56 - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        /* We halen scroll-behavior: smooth hier weg, en gaan het zelf doen met JavaScript */
+      }
+      /* Aanvullende CSS voor vloeiend scrollen */
+      .nav-bar a {
+        display: inline-block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: var(--text-light);
+        font-weight: bold;
+        transition: color 0.3s ease; /* Voeg een vloeiende overgang toe */
+        border-radius: 100px; /* Afgeronde hoeken voor de navigatie links */
+      }
+      .nav-bar a:hover {
+        color: var(--main-color);
+        background-color: rgba(255, 255, 255, 0.1); /* Subtiele achtergrondkleur bij hover */
+      }
+      .project-card {
+        border-radius: 12px; /* Afgeronde hoeken voor projectkaarten */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+      .offer-card {
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .offer-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      }
+      /* Stijl voor de actieve navigatie link */
+      .nav-bar a.active {
+        color: var(--main-color);
+        background-color: rgba(255, 255, 255, 0.2); /* Een iets sterkere achtergrondkleur */
+      }
 
+.nav-bar {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparante achtergrond */
+    padding: 15px 20px;
+    border-radius: 100px; /* Afgeronde hoeken voor de hele navigatiebalk */
+    margin: 0 auto 20px auto; /* Marge rondom de navigatiebalk */
+    max-width: 80%; /* Maximale breedte van de navigatiebalk */
+    display: flex; /* Gebruik flexbox voor de layout */
+    justify-content: center; /* Centreer de inhoud horizontaal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Schaduw om het "eiland" effect te versterken */
+    min-width: 50%;
+    width: fit-content; /* Breedte aanpassen aan de inhoud */
+    position: fixed; /* Fixeer de positie van de navigatiebalk */
+    top: 0; /* Plak de navigatiebalk aan de bovenkant van het scherm */
+    left: 50%; /* Centreer horizontaal */
+    transform: translateX(-50%); /* Precies centreren */
+    z-index: 1000; /* Zorg ervoor dat de navigatiebalk boven andere elementen ligt */
+    transition: box-shadow 0.3s ease; /* Aanpassing: enkel de schaduw wijzigen bij hover */
+}
+
+.nav-bar:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Verander enkel de schaduw bij hover */
+}
+
+
+      .nav-bar ul {
+        list-style: none;
+        display: flex; /* Zorg ervoor dat de menu-items horizontaal worden weergegeven */
+        padding: 0;
+        margin: 0;
+        gap: 10px;
+      }
+
+      .nav-bar li {
+        margin: 0; /* Ruimte tussen de menu-items */
+      }
+      .nav-bar a{
+        padding: 12px 15px;
+      }
+    </style>
+</head>
 <body>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#offer">What I Offer</a></li>
+            <li><a href="#contact">Get In Touch</a></li>
+        </ul>
+    </nav>
+
     <div class="toggle-container">
         <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
     </div>
@@ -26,7 +118,6 @@
             </p>
         </div>
     </header>
-
 
     <section id="projects" class="fade-in-once">
         <h2>My Projects</h2>
@@ -53,6 +144,7 @@
             <p>Stay tuned for updates!</p>
         </div>
     </section>
+
     <section id="skills" class="fade-in-once">
         <h2>My Skills</h2>
         <div class="skill">C++</div>
@@ -75,7 +167,7 @@
             </div>
             <div class="offer-card">
                 <h3>🎮 Game Development</h3>
-                <p>Creating engaging arcade and mobile games using Unity and JavaScript.</p>
+                <p>Creating engaging arcade en mobiele games met Unity en JavaScript.</p>
             </div>
             <div class="offer-card">
                 <h3>🔧 Technical Consulting</h3>
@@ -128,7 +220,7 @@
     </section>
 
     <script>
-        // Thema wisselen
+        // Theme switching
         document.addEventListener('DOMContentLoaded', () => {
             const toggleButton = document.getElementById('theme-toggle');
             const isLightMode = localStorage.getItem('theme') === 'light';
@@ -142,7 +234,7 @@
             });
         });
 
-let breakoutRunning = false;
+        let breakoutRunning = false;
 
         function toggleBreakout() {
             const container = document.getElementById('breakout-container');
@@ -164,32 +256,32 @@ let breakoutRunning = false;
             }
         }
 
-function restartBreakout() {
-    const gameOverText = document.getElementById('gameOver');
-    const restartButton = document.getElementById('restartButton');
-    const pauseButton = document.getElementById('pauseButton'); // Haal de pauzeknop op
-    const canvas = document.getElementById('breakoutCanvas');
-    const ctx = canvas.getContext('2d');
-    score = 0;
-    document.getElementById('score').textContent = 'Score: ' + score;
-    bricks = createBricks(); // Reset de bricks
-    ballX = canvas.width / 2;
-    ballY = canvas.height - 50;
-    dx = 5; // Keep the faster horizontal speed
-    dy = -5; // Keep the faster vertical speed
-    paddleX = (canvas.width - paddleWidth) / 2;
-    rightPressed = false;
-    leftPressed = false;
-    gameOver = false;
-    paused = false; // Reset pause state
-    gameOverText.classList.add('hidden');
-    restartButton.classList.add('hidden');
-    pauseButton.classList.remove('hidden'); // Zorg ervoor dat de pauzeknop weer zichtbaar is
-    pauseButton.textContent = 'Pause'; // Reset de tekst van de pauzeknop
-    draw(); // Start de game opnieuw
-}
-		
-        // Breakout-game logica
+        function restartBreakout() {
+            const gameOverText = document.getElementById('gameOver');
+            const restartButton = document.getElementById('restartButton');
+            const pauseButton = document.getElementById('pauseButton');
+            const canvas = document.getElementById('breakoutCanvas');
+            const ctx = canvas.getContext('2d');
+            score = 0;
+            document.getElementById('score').textContent = 'Score: ' + score;
+            bricks = createBricks();
+            ballX = canvas.width / 2;
+            ballY = canvas.height - 50;
+            dx = 5;
+            dy = -5;
+            paddleX = (canvas.width - paddleWidth) / 2;
+            rightPressed = false;
+            leftPressed = false;
+            gameOver = false;
+            paused = false;
+            gameOverText.classList.add('hidden');
+            restartButton.classList.add('hidden');
+            pauseButton.classList.remove('hidden');
+            pauseButton.textContent = 'Pause';
+            draw();
+        }
+
+        // Breakout game logic
         let canvas;
         let ctx;
         let ballX;
@@ -212,7 +304,7 @@ function restartBreakout() {
         let bricks = [];
         let score = 0;
         let gameOver = false;
-        let paused = false; // Nieuwe variabele voor de pauzestand
+        let paused = false;
 
         function createBricks() {
             const bricksArray = [];
@@ -225,7 +317,7 @@ function restartBreakout() {
             return bricksArray;
         }
 
-function startBreakout() {
+        function startBreakout() {
             canvas = document.getElementById('breakoutCanvas');
             ctx = canvas.getContext('2d');
             score = 0;
@@ -233,8 +325,8 @@ function startBreakout() {
             bricks = createBricks();
             ballX = canvas.width / 2;
             ballY = canvas.height - 50;
-            dx = 5; // Verhoog de horizontale startsnelheid
-            dy = -5; // Verhoog de verticale startsnelheid (negatief om naar boven te gaan)
+            dx = 5;
+            dy = -5;
             paddleX = (canvas.width - paddleWidth) / 2;
             rightPressed = false;
             leftPressed = false;
@@ -250,7 +342,7 @@ function startBreakout() {
         function keyDownHandler(e) {
             if (e.key === 'Right' || e.key === 'ArrowRight') rightPressed = true;
             else if (e.key === 'Left' || e.key === 'ArrowLeft') leftPressed = true;
-            else if (e.key === 'p' || e.key === 'P' || e.key === ' ') { // Pauzeer met 'P' of spatie
+            else if (e.key === 'p' || e.key === 'P' || e.key === ' ') {
                 togglePause();
             }
         }
@@ -304,16 +396,16 @@ function startBreakout() {
                             b.status = 0;
                             score++;
                             document.getElementById('score').textContent = 'Score: ' + score;
-                            dx *= 1.05; // Alleen sneller als een blokje geraakt wordt
+                            dx *= 1.05;
                             dy *= 1.05;
                             if (score === brickRowCount * brickColumnCount) {
                                 gameOver = true;
-                                paused = true; // Stop de game loop
-                                breakoutRunning = false; // Reset breakoutRunning bij winst
+                                paused = true;
+                                breakoutRunning = false;
                                 document.getElementById('gameOver').textContent = 'You Win!';
                                 document.getElementById('gameOver').classList.remove('hidden');
                                 document.getElementById('restartButton').classList.remove('hidden');
-                                document.getElementById('pauseButton').classList.add('hidden'); // Verberg de pauzeknop na winnen
+                                document.getElementById('pauseButton').classList.add('hidden');
                             }
                         }
                     }
@@ -336,12 +428,12 @@ function startBreakout() {
                     if (ballX > paddleX && ballX < paddleX + paddleWidth) dy = -dy;
                     else {
                         gameOver = true;
-                        paused = true; // Stop de game loop
-                        breakoutRunning = false; // Reset breakoutRunning bij verlies
+                        paused = true;
+                        breakoutRunning = false;
                         document.getElementById('gameOver').textContent = 'Game Over!';
                         document.getElementById('gameOver').classList.remove('hidden');
                         document.getElementById('restartButton').classList.remove('hidden');
-                        document.getElementById('pauseButton').classList.add('hidden'); // Verberg de pauzeknop na verlies
+                        document.getElementById('pauseButton').classList.add('hidden');
                     }
                 }
 
@@ -361,12 +453,64 @@ function startBreakout() {
                 const pauseButton = document.getElementById('pauseButton');
                 pauseButton.textContent = paused ? 'Resume' : 'Pause';
                 if (!paused) {
-                    draw(); // Herstart de game loop als niet gepauzeerd
+                    draw();
                 }
             }
         }
+
+        // Smooth scrolling functie
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();  // Prevents the default jump behavior
+
+                const targetId = this.getAttribute('href'); // Get the target section's ID
+                const targetElement = document.querySelector(targetId); // Find the target element
+
+                if (targetElement) {
+                    // Voeg een klasse toe aan de actieve link
+                    document.querySelectorAll('.nav-bar a').forEach(link => {
+                        link.classList.remove('active'); // Verwijder de klasse van alle links
+                    });
+                    this.classList.add('active'); // Voeg de klasse toe aan de huidige link
+
+                    const targetPosition = targetElement.offsetTop;
+                    const startPosition = window.pageYOffset;
+                    const distance = targetPosition - startPosition;
+                    const duration = 500; // Hoe hoger, hoe langzamer, aangepast naar 500 voor sneller effect
+                    let startTime = null;
+
+                    function smoothScroll(currentTime) {
+                        if (!startTime) startTime = currentTime;
+                        const progress = currentTime - startTime;
+                        const easing = easeInOutCubic(progress, startPosition, distance, duration);
+                        window.scrollTo(0, easing);
+                        if (progress < duration) requestAnimationFrame(smoothScroll);
+                    }
+
+                    // Easing functie (versnellen en vertragen) - Sterkere easing, aangepast voor sneller effect
+                    function easeInOutCubic(t, b, c, d) {
+                        if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
+                        return c / 2 * ((t -= 2) * t * t + 2) + b;
+                    }
+
+                    requestAnimationFrame(smoothScroll);
+                }
+            });
+        });
+
+        // Smooth scrolling voor de button
+        document.querySelectorAll('button[onclick^="toggleBreakout"]').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = "#breakout-card";
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
-
 </body>
-
 </html>
