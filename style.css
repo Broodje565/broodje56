@@ -311,6 +311,49 @@ section {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
 }
 
+#newsletter {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #222; /* Of een andere donkere kleur die bij je thema past */
+    color: #f0f0f0;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+#newsletter h2 {
+    color: #eee;
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
+#newsletter p {
+    margin-bottom: 10px;
+}
+
+#newsletter a {
+    color: var(--main-color); /* Gebruik je thema kleur */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#newsletter a:hover {
+    text-decoration: underline;
+    color: var(--accent-color); /* Gebruik je accent kleur */
+}
+
+.light-mode #newsletter {
+    background-color: #f9f9f9; /* Lichte achtergrond voor light mode */
+    color: #121212;
+}
+
+.light-mode #newsletter a {
+    color: var(--accent-color); /* Gebruik je accent kleur in light mode */
+}
+
+.light-mode #newsletter a:hover {
+    color: var(--main-color); /* Gebruik je thema kleur in light mode */
+}
+
 /* Get In Touch Sectie */
 #contact {
   text-align: center;
@@ -494,7 +537,111 @@ button:focus {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Extra marge voor de Play Breakout knop */
+
 #projects #breakout-card button {
   margin-top: 1rem;
-} 
+}
+
+#reviews {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #121212;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.reviews-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid white;
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box; /* Belangrijk: zorgt dat padding en border binnen de breedte vallen */
+}
+
+/* Stijl voor individuele reviews */
+.review {
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 1px solid white;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  font-size: 0.9em;
+  box-sizing: border-box; /* Belangrijk: zorgt dat padding en border binnen de breedte vallen */
+}
+
+/* Afwisselende achtergrondkleur voor contrast */
+.review:nth-child(odd) {
+  background-color: #111;
+}
+
+.review:nth-child(even) {
+  background-color: #111;
+}
+
+/* Hover-effect voor de individuele review */
+.review:hover {
+  transform: translateY(-10px); /* Tilt effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Schaduw effect */
+}
+
+/* Sterren in goudkleur met lichte animatie */
+.stars {
+  color: gold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.review:hover .stars {
+  color: #ffcc00; /* Gouden kleur wordt lichter bij hover */
+}
+
+/* Contact knop */
+.contact-button {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.contact-button:hover {
+  background-color: gray;
+  transform: scale(1.1); /* Vergroten bij hover */
+}
+.light-mode #reviews {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+
+.light-mode .reviews-container {
+  border-color: var(--text-dark);
+}
+
+.light-mode .review {
+  color: var(--text-dark);
+  border-color: var(--text-dark);
+}
+
+.light-mode .review:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.light-mode .review:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.light-mode .contact-button {
+  color: white;
+  background-color: var(--accent-color);
+}
+
+.light-mode .contact-button:hover {
+  background-color: var(--main-color);
+}
