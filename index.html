@@ -52,43 +52,51 @@
       }
 
 .nav-bar {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparante achtergrond */
-    padding: 15px 20px;
-    border-radius: 100px; /* Afgeronde hoeken voor de hele navigatiebalk */
-    margin: 0 auto 20px auto; /* Marge rondom de navigatiebalk */
-    max-width: 80%; /* Maximale breedte van de navigatiebalk */
-    display: flex; /* Gebruik flexbox voor de layout */
-    justify-content: center; /* Centreer de inhoud horizontaal */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Schaduw om het "eiland" effect te versterken */
-    min-width: 50%;
-    width: fit-content; /* Breedte aanpassen aan de inhoud */
-    position: fixed; /* Fixeer de positie van de navigatiebalk */
-    top: 0; /* Plak de navigatiebalk aan de bovenkant van het scherm */
-    left: 50%; /* Centreer horizontaal */
-    transform: translateX(-50%); /* Precies centreren */
-    z-index: 1000; /* Zorg ervoor dat de navigatiebalk boven andere elementen ligt */
-    transition: box-shadow 0.3s ease; /* Aanpassing: enkel de schaduw wijzigen bij hover */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparante achtergrond */
+  padding: 15px 20px;
+  border-radius: 100px; /* Afgeronde hoeken voor de hele navigatiebalk */
+  margin: 0 auto 20px auto; /* Marge rondom de navigatiebalk */
+  max-width: 900px; /* Stel een maximale breedte in (pas dit getal aan) */
+  width: 90%; /* Gebruik een percentage om responsief te zijn */
+  display: flex; /* Gebruik flexbox voor de layout */
+  justify-content: center; /* Centreer de inhoud horizontaal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Schaduw om het "eiland" effect te versterken */
+  position: fixed; /* Fixeer de positie van de navigatiebalk */
+  top: 0; /* Plak de navigatiebalk aan de bovenkant van het scherm */
+  left: 50%; /* Centreer horizontaal */
+  transform: translateX(-50%); /* Precies centreren */
+  z-index: 1000; /* Zorg ervoor dat de navigatiebalk boven andere elementen ligt */
+  transition: box-shadow 0.3s ease;
 }
 
-.nav-bar:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Verander enkel de schaduw bij hover */
+.nav-bar ul {
+  list-style: none;
+  display: flex; /* Zorg ervoor dat de menu-items horizontaal worden weergegeven */
+  padding: 0;
+  margin: 0;
+  gap: 10px; /* Iets minder ruimte tussen de items */
 }
 
+.nav-bar li {
+  margin: 0;
+}
 
-      .nav-bar ul {
-        list-style: none;
-        display: flex; /* Zorg ervoor dat de menu-items horizontaal worden weergegeven */
-        padding: 0;
-        margin: 0;
-        gap: 10px;
-      }
+.nav-bar a {
+  display: block; /* Zorgt ervoor dat de hele link klikbaar is */
+  padding: 10px 12px; /* Iets minder padding */
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: bold;
+  transition: color 0.3s ease;
+  border-radius: 100px;
+  white-space: nowrap; /* Voorkomt dat de tekst ombreekt */
+  font-size: 0.9em; /* Maak de tekst eventueel iets kleiner */
+}
 
-      .nav-bar li {
-        margin: 0; /* Ruimte tussen de menu-items */
-      }
-      .nav-bar a{
-        padding: 12px 15px;
-      }
+.nav-bar a:hover {
+  color: var(--main-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
     </style>
 </head>
 <body>
@@ -100,7 +108,8 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#offer">What I Offer</a></li>
         <li><a href="#faq">FAQ</a></li>
-		<li><a href="#contact">Get In Touch</a></li>
+		<li><a href="#reviews">Reviews</a></li>
+		<li><a href="#contact">Contact Me</a></li>
         
     </ul>
 </nav>
@@ -190,6 +199,7 @@
             </div>
         </div>
     </section>
+	
 <section id="faq" class="faq-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-container">
@@ -252,8 +262,27 @@
   });
 </script>
 
+<section id="reviews">
+  <h2>Reviews</h2>
+
+  <div class="reviews-container">
+    <div id="reviewsList">
+      <h3>Recent Reviews:</h3>
+
+      <div class="review">
+        <h4>Lukas of Smartschool++</h4>
+        <p class="stars">★★★★☆</p>
+        <p>"He makes beautiful quality designs and I am happy with his work."</p>
+      </div>
+
+      <p>Would you like to leave a review? Please contact me!</p>
+      <a href="#contact" class="contact-button">Contact Me!</a>
+    </div>
+  </div>
+</section>
+
     <section id="contact" class="fade-in">
-        <h2>Get In Touch</h2>
+        <h2>Contact Me</h2>
         <div class="contact-container">
             <div class="contact-card">
                 <h3>Email</h3>
