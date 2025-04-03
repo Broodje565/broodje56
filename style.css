@@ -1,4 +1,3 @@
-/* Algemene stijlen */
 :root {
   --main-color: #7d2ae8;
   --accent-color: #9f50ff;
@@ -24,7 +23,6 @@ body {
   color: var(--text-dark);
 }
 
-/* Thema-schakelaar */
 .toggle-container {
   position: fixed;
   top: 20px;
@@ -47,7 +45,6 @@ body {
   transform: rotate(180deg);
 }
 
-/* Nav Bar */
 .nav-bar {
   background-color: var(--background-dark);
   color: var(--text-light);
@@ -76,7 +73,6 @@ body {
   margin: 0 1rem;
 }
 
-/* Nav Bar */
 .nav-bar a {
   color: var(--text-light);
   text-decoration: none;
@@ -98,7 +94,6 @@ body {
   text-shadow: 0 0 8px var(--accent-color);
 }
 
-/* FAQ Section */
 .faq-section {
   margin: 4rem 0;
 }
@@ -163,7 +158,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Header */
 header {
   text-align: center;
   padding: 5rem 1rem;
@@ -179,7 +173,6 @@ h2 {
   margin-top: 2rem;
 }
 
-/* About Me Sectie */
 #about-me {
   text-align: center;
   padding: 5rem 1rem;
@@ -221,14 +214,12 @@ h2 {
   animation: fadeInText 2s ease-in forwards;
 }
 
-/* Secties */
 section {
   padding: 3rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Projectkaarten */
 .project-card {
   background: linear-gradient(145deg, #2b2b2b, #1c1c1c);
   color: white;
@@ -249,7 +240,6 @@ section {
   color: black;
 }
 
-/* Skills */
 .skill {
   display: inline-block;
   background: var(--main-color);
@@ -270,7 +260,6 @@ section {
   background: var(--accent-color);
 }
 
-/* Process-stappen */
 .process-step {
   background: #1c1c1c;
   padding: 2rem;
@@ -283,7 +272,6 @@ section {
   color: black;
 }
 
-/* What I Offer */
 .offer-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -314,10 +302,10 @@ section {
 #newsletter {
     text-align: center;
     padding: 30px 20px;
-    background-color: #222; /* Of een andere donkere kleur die bij je thema past */
+    background-color: #222; 
     color: #f0f0f0;
     border-radius: 8px;
-    margin-top: 30px;
+    margin-top: 100px;
 }
 
 #newsletter h2 {
@@ -327,34 +315,92 @@ section {
 }
 
 #newsletter p {
-    margin-bottom: 10px;
+    margin-bottom: 20px; 
+    line-height: 1.6; 
+}
+
+#newsletter .button {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255); 
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+#newsletter .button:hover {
+  background-color: #f0f0f0; 
+  color: black;
+}
+
+.light-mode #newsletter .button {
+  color: white;
+  background-color: var(--accent-color);
+}
+
+.light-mode #newsletter .button:hover {
+  background-color: var(--main-color);
 }
 
 #newsletter a {
-    color: var(--main-color); /* Gebruik je thema kleur */
+    color: var(--main-color); 
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease-in-out; 
 }
 
 #newsletter a:hover {
     text-decoration: underline;
-    color: var(--accent-color); /* Gebruik je accent kleur */
+    color: var(--accent-color); 
 }
 
 .light-mode #newsletter {
-    background-color: #f9f9f9; /* Lichte achtergrond voor light mode */
-    color: #121212;
+    background-color: #f9f9f9; 
+    color: #333; 
+}
+
+.light-mode #newsletter h2 {
+    color: #121212; 
 }
 
 .light-mode #newsletter a {
-    color: var(--accent-color); /* Gebruik je accent kleur in light mode */
+    color: var(--accent-color); 
 }
 
 .light-mode #newsletter a:hover {
-    color: var(--main-color); /* Gebruik je thema kleur in light mode */
+    color: var(--main-color); 
+}
+#newsletter .review-button {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white; 
+  background-color: #121212; 
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: none; 
+  cursor: pointer;
+  font-weight: bold; 
 }
 
-/* Get In Touch Sectie */
+#newsletter .review-button:hover {
+  background-color: #333; 
+}
+
+.light-mode #newsletter .review-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.light-mode #newsletter .review-button:hover {
+  background-color: var(--main-color);
+}
+
 #contact {
   text-align: center;
   padding: 4rem 1rem;
@@ -400,7 +446,6 @@ section {
   text-decoration: underline;
 }
 
-/* Animaties */
 .fade-in {
   opacity: 0;
   animation: fadeIn 1.5s ease-in forwards;
@@ -429,7 +474,6 @@ section {
   }
 }
 
-/* Animaties voor About Me */
 @keyframes slideIn {
   from {
     transform: translateX(-50px);
@@ -461,24 +505,20 @@ section {
   }
 }
 
-/* Verborgen elementen */
 .hidden {
   display: none;
 }
 
-/* Toegankelijkheid */
 button:focus {
   outline: 2px solid var(--main-color);
   outline-offset: 4px;
 }
 
-/* Stijlen voor de Breakout container */
 #breakout-container {
   position: relative;
   margin-top: 1rem;
 }
 
-/* Algemene stijlen voor de knoppen in de Breakout container */
 #breakout-container button,
 #projects #breakout-card button {
   background-color: var(--main-color);
@@ -504,7 +544,6 @@ button:focus {
   outline-offset: 2px;
 }
 
-/* Specifieke positie voor de "Restart" knop */
 #restartButton {
   position: absolute;
   bottom: 10px;
@@ -512,14 +551,12 @@ button:focus {
   transform: translateX(-50%);
 }
 
-/* Specifieke positie voor de "Pause" knop */
 #pauseButton {
   position: absolute;
   top: 10px;
   left: 10px;
 }
 
-/* Stijlen voor de "Game Over" tekst */
 #gameOver {
   position: absolute;
   top: 50%;
@@ -557,10 +594,9 @@ button:focus {
   border-radius: 10px;
   border: 1px solid white;
   transition: box-shadow 0.3s ease;
-  box-sizing: border-box; /* Belangrijk: zorgt dat padding en border binnen de breedte vallen */
+  box-sizing: border-box;
 }
 
-/* Stijl voor individuele reviews */
 .review {
   padding: 15px;
   margin: 15px 0;
@@ -570,10 +606,9 @@ button:focus {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   font-size: 0.9em;
-  box-sizing: border-box; /* Belangrijk: zorgt dat padding en border binnen de breedte vallen */
+  box-sizing: border-box; 
 }
 
-/* Afwisselende achtergrondkleur voor contrast */
 .review:nth-child(odd) {
   background-color: #111;
 }
@@ -582,13 +617,11 @@ button:focus {
   background-color: #111;
 }
 
-/* Hover-effect voor de individuele review */
 .review:hover {
-  transform: translateY(-10px); /* Tilt effect */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Schaduw effect */
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); 
 }
 
-/* Sterren in goudkleur met lichte animatie */
 .stars {
   color: gold;
   font-size: 18px;
@@ -596,10 +629,9 @@ button:focus {
 }
 
 .review:hover .stars {
-  color: #ffcc00; /* Gouden kleur wordt lichter bij hover */
+  color: #ffcc00; 
 }
 
-/* Contact knop */
 .contact-button {
   display: inline-block;
   padding: 10px 15px;
@@ -613,7 +645,7 @@ button:focus {
 
 .contact-button:hover {
   background-color: gray;
-  transform: scale(1.1); /* Vergroten bij hover */
+  transform: scale(1.1); 
 }
 .light-mode #reviews {
   background-color: var(--background-light);
