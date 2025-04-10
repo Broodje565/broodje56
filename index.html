@@ -11,25 +11,23 @@
 <style>
   body {
     font-family: 'Inter', sans-serif;
-    /* We halen scroll-behavior: smooth hier weg, en gaan het zelf doen met JavaScript */
   }
-  /* Aanvullende CSS voor vloeiend scrollen */
   .nav-bar a {
-    display: inline-block; /* Belangrijk om de padding goed te laten werken naast elkaar */
+    display: inline-block; 
     padding: 10px 15px;
     text-decoration: none;
     color: var(--text-light);
     font-weight: bold;
-    transition: color 0.3s ease; /* Voeg een vloeiende overgang toe */
-    border-radius: 100px; /* Afgeronde hoeken voor de navigatie links */
+    transition: color 0.3s ease; 
+    border-radius: 100px; 
   }
   .nav-bar a:hover {
     color: var(--main-color);
-    background-color: rgba(255, 255, 255, 0.1); /* Subtiele achtergrondkleur bij hover */
+    background-color: rgba(255, 255, 255, 0.1); 
   }
   .project-card {
-    border-radius: 12px; /* Afgeronde hoeken voor projectkaarten */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schaduw voor diepte */
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
   .project-card:hover {
@@ -45,52 +43,50 @@
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   }
-  /* Stijl voor de actieve navigatie link */
   .nav-bar a.active {
     color: var(--main-color);
-    background-color: rgba(255, 255, 255, 0.2); /* Een iets sterkere achtergrondkleur */
+    background-color: rgba(255, 255, 255, 0.2); 
   }
 
 .nav-bar {
-  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparante achtergrond */
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 15px 20px;
-  border-radius: 100px; /* Afgeronde hoeken voor de hele navigatiebalk */
-  margin: 0 auto 20px auto; /* Marge rondom de navigatiebalk */
-  max-width: 900px; /* Stel een maximale breedte in (pas dit getal aan) */
-  width: 90%; /* Gebruik een percentage om responsief te zijn */
-  display: flex; /* Gebruik flexbox voor de layout */
-  justify-content: center; /* Centreer de inhoud horizontaal */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Schaduw om het "eiland" effect te versterken */
-  position: fixed; /* Fixeer de positie van de navigatiebalk */
-  top: 0; /* Plak de navigatiebalk aan de bovenkant van het scherm */
-  left: 50%; /* Centreer horizontaal */
-  transform: translateX(-50%); /* Precies centreren */
-  z-index: 1000; /* Zorg ervoor dat de navigatiebalk boven andere elementen ligt */
+  border-radius: 100px;
+  margin: 0 auto 20px auto;
+  max-width: 900px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   transition: box-shadow 0.3s ease;
 }
 
 .nav-bar ul {
   list-style: none;
-  display: flex; /* Zorg ervoor dat de menu-items horizontaal worden weergegeven */
+  display: flex;
   padding: 0;
   margin: 0;
-  gap: 10px; /* Iets minder ruimte tussen de items */
-}
+  gap: 10px;
 
 .nav-bar li {
   margin: 0;
 }
 
 .nav-bar a {
-  display: block; /* Zorgt ervoor dat de hele link klikbaar is */
-  padding: 10px 12px; /* Iets minder padding */
+  display: block;
+  padding: 10px 12px;
   text-decoration: none;
   color: var(--text-light);
   font-weight: bold;
   transition: color 0.3s ease;
   border-radius: 100px;
-  white-space: nowrap; /* Voorkomt dat de tekst ombreekt */
-  font-size: 0.9em; /* Maak de tekst eventueel iets kleiner */
+  white-space: nowrap;
+  font-size: 0.9em;
 }
 
 .nav-bar a:hover {
@@ -135,28 +131,75 @@
 
     <section id="projects" class="fade-in-once">
         <h2>My Projects</h2>
-        <div class="project-card" id="breakout-card">
-            <h3>Breakout</h3>
-            <p>Play my classic brick-breaking game directly in your browser!</p>
-            <button onclick="toggleBreakout()">Play Breakout</button>
-            <div id="breakout-container" class="game-container hidden">
-                <canvas id="breakoutCanvas" width="480" height="320"></canvas>
-                <div id="score">Score: 0</div>
-                <div id="gameOver" class="hidden">Game Over!</div>
-                <button onclick="restartBreakout()" class="hidden" id="restartButton">Restart</button>
-                <button onclick="togglePause()" id="pauseButton">Pause</button>
-            </div>
-        </div>
+<div class="project-container">
+  <div class="project-card" id="breakout-card">
+    <h2>Breakout</h2>
+    <p>Play my classic brick-breaking game directly in your browser!</p>
+    <button onclick="toggleBreakout()">Play Breakout</button>
+    <div id="breakout-container" class="hidden">
+      <canvas id="breakoutCanvas" width="640" height="480"></canvas>
+      <div id="gameOver" class="hidden">Game Over!</div>
+      <button id="restartButton" class="hidden" onclick="restartBreakout()">Restart Game</button>
+      <button id="pauseButton" onclick="togglePause()">Pause</button>
+      <div id="score">Score: 0</div>
+    </div>
+  </div>
 
-        <div class="project-card">
-            <h3>TicTacToe</h3>
-            <p>Coming soon...</p>
-        </div>
+  <div class="project-card">
+    <button class="extensions-button">My Extensions</button>
+    <div class="extensions-list">
+      <div class="extension-item">
+        <h3>Broodje56's Love Meter</h3>
+        <p>Check the compatibility between two names.</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's Notebook for browser</h3>
+        <p>A simple notebook for your browser.</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's Password Strength Meter</h3>
+        <p>A tool to check password strength and suggest improvements.</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's Plagiarism Checker for Schoolwork</h3>
+        <p>Check your school assignments for plagiarism before submitting.</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's QR-code Generator</h3>
+        <p>Generate a QR code from the current page.</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's Calculator</h3>
+        <p>Broodje56's Calculator for the Lesson</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's Superpower Matcher</h3>
+        <p>Discover your superpower based on your name!</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's Text Highlighter</h3>
+        <p>Highlight selected text on any webpage with your chosen color.</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's Text Speaker</h3>
+        <p>Have selected text read aloud on a web page.</p>
+      </div>
+      <div class="extension-item">
+        <h3>Broodje56's Password Generator</h3>
+        <p>Generate strong passwords.</p>
+      </div>
+      </div>
+  </div>
 
-        <div class="project-card">
-            <h3>Flappy Bird (in progress)</h3>
-            <p>Stay tuned for updates!</p>
-        </div>
+  <div class="project-card">
+    <h2>TicTacToe</h2>
+    <p>Coming soon...</p>
+  </div>
+
+  <div class="project-card">
+    <h2>Flappy Bird (in progress)</h2>
+    <p>Stay tuned for updates!</p>
+  </div>
     </section>
 
     <section id="skills" class="fade-in-once">
@@ -608,6 +651,17 @@
                 }
             });
         });
+		
+		    document.addEventListener('DOMContentLoaded', function() {
+        const extensionsButton = document.querySelector('.extensions-button');
+        const extensionsList = document.querySelector('.extensions-list');
+
+        if (extensionsButton && extensionsList) {
+            extensionsButton.addEventListener('click', function() {
+                extensionsList.style.display = (extensionsList.style.display === 'none' || extensionsList.style.display === '') ? 'block' : 'none';
+            });
+        }
+    });
     </script>
 </body>
 </html>
