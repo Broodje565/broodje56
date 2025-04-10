@@ -46,52 +46,77 @@ body {
 }
 
 .nav-bar {
-  background-color: var(--background-dark);
-  color: var(--text-light);
-  padding: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 20px;
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  transform: translateX(0%);
   z-index: 1000;
-}
-
-.light-mode .nav-bar {
-  background-color: white;
-  color: var(--text-dark);
+  transition: box-shadow 0.3s ease;
 }
 
 .nav-bar ul {
   list-style: none;
+  display: flex;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
+  gap: 10px;
 }
 
 .nav-bar li {
-  margin: 0 1rem;
+  margin: 0;
 }
 
 .nav-bar a {
-  color: var(--text-light);
+  display: block;
+  padding: 10px 12px;
   text-decoration: none;
+  color: var(--text-light);
   font-weight: bold;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease;
+  border-radius: 100px;
+  white-space: nowrap;
+  font-size: 0.9em;
 }
 
 .nav-bar a:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
   color: var(--main-color);
-  text-shadow: 0 0 8px var(--main-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-12px) scale(1.05); 
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6); 
+}
+
+.light-mode .nav-bar {
+  background-color: #f8f8f8;
+  color: var(--text-dark);
+  border-radius: 100px;
+  margin: 0 auto 20px auto;
+  max-width: 900px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+.light-mode .nav-bar a {
+  color: black;
 }
 
 .light-mode .nav-bar a:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
-  color: var(--accent-color);
-  text-shadow: 0 0 8px var(--accent-color);
+  color: var(--main-color);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .faq-section {
