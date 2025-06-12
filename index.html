@@ -145,62 +145,90 @@
     </div>
   </div>
 
-  <div class="project-card">
-    <button class="extensions-button">My Extensions</button>
-    <div class="extensions-list">
-      <div class="extension-item">
-        <h3>Broodje56's Love Meter</h3>
-        <p>Check the compatibility between two names.</p>
+<section id="projects" class="fade-in-once">
+  <h2>My Projects</h2>
+  <div class="project-container">
+    <div class="project-card" id="breakout-card">
+      <h2>Breakout</h2>
+      <p>Play my classic brick-breaking game directly in your browser!</p>
+      <button onclick="toggleBreakout()">Play Breakout</button>
+      <div id="breakout-container" class="hidden">
+        <canvas id="breakoutCanvas" width="640" height="480"></canvas>
+        <div id="gameOver" class="hidden">Game Over!</div>
+        <button id="restartButton" class="hidden" onclick="restartBreakout()">Restart Game</button>
+        <button id="pauseButton" onclick="togglePause()">Pause</button>
+        <div id="score">Score: 0</div>
       </div>
-      <div class="extension-item">
-        <h3>Broodje56's Notebook for browser</h3>
-        <p>A simple notebook for your browser.</p>
-      </div>
-      <div class="extension-item">
-        <h3>Broodje56's Password Strength Meter</h3>
-        <p>A tool to check password strength and suggest improvements.</p>
-      </div>
-      <div class="extension-item">
-        <h3>Broodje56's Plagiarism Checker for Schoolwork</h3>
-        <p>Check your school assignments for plagiarism before submitting.</p>
-      </div>
-      <div class="extension-item">
-        <h3>Broodje56's QR-code Generator</h3>
-        <p>Generate a QR code from the current page.</p>
-      </div>
-      <div class="extension-item">
-        <h3>Broodje56's Calculator</h3>
-        <p>Broodje56's Calculator for the Lesson</p>
-      </div>
-      <div class="extension-item">
-        <h3>Broodje56's Superpower Matcher</h3>
-        <p>Discover your superpower based on your name!</p>
-      </div>
-      <div class="extension-item">
-        <h3>Broodje56's Text Highlighter</h3>
-        <p>Highlight selected text on any webpage with your chosen color.</p>
-      </div>
-      <div class="extension-item">
-        <h3>Broodje56's Text Speaker</h3>
-        <p>Have selected text read aloud on a web page.</p>
-      </div>
-      <div class="extension-item">
-        <h3>Broodje56's Password Generator</h3>
-        <p>Generate strong passwords.</p>
-      </div>
-      </div>
-  </div>
+    </div>
 
-  <div class="project-card">
-    <h2>TicTacToe</h2>
-    <p>Coming soon...</p>
-  </div>
+    <div class="project-card">
+      <button class="extensions-button">My Extensions</button>
+      <div class="extensions-list">
+        <div class="extension-item">
+          <h3>Broodje56's Love Meter</h3>
+          <p>Check the compatibility between two names.</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's Notebook for browser</h3>
+          <p>A simple notebook for your browser.</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's Password Strength Meter</h3>
+          <p>A tool to check password strength and suggest improvements.</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's Plagiarism Checker for Schoolwork</h3>
+          <p>Check your school assignments for plagiarism before submitting.</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's QR-code Generator</h3>
+          <p>Generate a QR code from the current page.</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's Calculator</h3>
+          <p>Broodje56's Calculator for the Lesson</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's Superpower Matcher</h3>
+          <p>Discover your superpower based on your name!</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's Text Highlighter</h3>
+          <p>Highlight selected text on any webpage with your chosen color.</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's Text Speaker</h3>
+          <p>Have selected text read aloud on a web page.</p>
+        </div>
+        <div class="extension-item">
+          <h3>Broodje56's Password Generator</h3>
+          <p>Generate strong passwords.</p>
+        </div>
+      </div>
+    </div>
 
-  <div class="project-card">
-    <h2>Flappy Bird (in progress)</h2>
-    <p>Stay tuned for updates!</p>
+    <div class="project-card">
+      <h2>Websites I've Made</h2>
+      <ul>
+	    <li><a href="https://broodje56.is-a.dev" target="_blank" rel="noopener noreferrer">broodje56.is-a.dev</a></li>
+        <li><a href="https://make-money-webversion.great-site.net" target="_blank" rel="noopener noreferrer">make-money-webversion.great-site.net</a></li>
+        <li><a href="https://Topcomment.great-site.net" target="_blank" rel="noopener noreferrer">Topcomment.great-site.net</a></li>
+		<li><a href="https://broodje565.github.io/emoji-website/" target="_blank" rel="noopener noreferrer">broodje565.github.io/emoji-website</a></li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h2>TicTacToe</h2>
+      <p>Coming soon...</p>
+    </div>
+
+    <div class="project-card">
+      <h2>Flappy Bird (in progress)</h2>
+      <p>Stay tuned for updates!</p>
+    </div>
   </div>
-    </section>
+</section>
+
 
     <section id="skills" class="fade-in-once">
         <h2>My Skills</h2>
@@ -673,6 +701,8 @@
         }
     });
 document.addEventListener('contextmenu', event => event.preventDefault());
+ 
+// Disable certain key combinations
 document.addEventListener('keydown', event => {
     if (event.ctrlKey && (event.key === 'u' || event.key === 's' || event.key === 'i')) {
         event.preventDefault();
