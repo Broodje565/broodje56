@@ -6,6 +6,6 @@ This code and its associated files may not be copied, modified, distributed, or 
 
 Unauthorized use, reproduction, or distribution of this code is strictly prohibited and may result in civil and/or criminal penalties under applicable laws.
 
-By using the website or view this code, you agree to these terms.
+By viewing the website or view this code, you agree to these terms.
 
 © 2025 Broodje56
